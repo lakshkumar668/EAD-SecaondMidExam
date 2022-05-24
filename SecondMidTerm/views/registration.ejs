@@ -7,13 +7,6 @@
     height: 200;
     border: 1px solid;
   }
-
-  .avatar {
-    vertical-align: middle;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-  }
 </style>
 
 <head>
@@ -31,93 +24,83 @@
 
 <body>
 
+  <form method="POST" action="/display" id="form" enctype="multipart/form-data">
+    <Grid container spacing={10}>
+      <Grid item xs={2}>
+        <!-- image -->
+        <div class="col">
+          <input type="file" name="profilepic" accept=".png,.jpg" />
+        </div>
+      </Grid>
+      <Grid>
+        <!-- 2 column grid layout with text inputs for the first and last names -->
+        <div class="row mb-4">
 
-  <Grid container spacing={10}>
-    <form method="POST" action="/display" id="form" enctype="multipart/form-data"></form>
-    <Grid item xs={2}>
-      <!-- image -->
-      <div class="card">
-        <div class="card-body">
+          <!-- fullname input -->
           <div class="col">
-            <input type="file" name="profilepic" class="avatar" />
-            <label class="form-label" for="form6Example1">add Image</label>
+            <div class="form-outline">
+              <input type="text" id="form6Example1" class="form-control" name="fullname" />
+              <label class="form-label" for="form6Example1">Full name</label>
+            </div>
+          </div>
+          <!-- Email input -->
+          <div class="col">
+            <div class="form-outline">
+              <input type="text" id="form6Example2" class="form-control" name="email" />
+              <label class="form-label" for="form6Example2">Email</label>
+            </div>
           </div>
         </div>
-      </div>
-    </Grid>
-
-    <Grid item xs={10}>
-
-      <!-- 2 column grid layout with text inputs for the first and last names -->
-      <div class="row mb-4">
-
-        <!-- fullname input -->
-        <div class="col">
-          <div class="form-outline">
-            <input type="text" id="form6Example1" class="form-control" name="fullname" />
-            <label class="form-label" for="form6Example1">Full name</label>
+        <div class="row mb-4">
+          <!-- phone input -->
+          <div class="col">
+            <div class="form-outline">
+              <input type="text" id="form6Example1" class="form-control" name="phone" />
+              <label class="form-label" for="form6Example1">Phone Number</label>
+            </div>
+          </div>
+          <!-- country input -->
+          <div class="col">
+            <div class="form-outline">
+              <input type="text" id="form6Example2" class="form-control" name="country" />
+              <label class="form-label" for="form6Example2">Country</label>
+            </div>
           </div>
         </div>
-        <!-- Email input -->
-        <div class="col">
-          <div class="form-outline">
-            <input type="text" id="form6Example2" class="form-control" name="email" />
-            <label class="form-label" for="form6Example2">Email</label>
+        <div class="row mb-4">
+          <!-- state input -->
+          <div class="col">
+            <div class="form-outline">
+              <input type="text" id="form6Example1" class="form-control" name="state" />
+              <label class="form-label" for="form6Example1">State/Region</label>
+            </div>
+          </div>
+          <!-- city input -->
+          <div class="col">
+            <div class="form-outline">
+              <input type="text" id="form6Example2" class="form-control" name="city" />
+              <label class="form-label" for="form6Example2">City</label>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row mb-4">
-        <!-- phone input -->
-        <div class="col">
-          <div class="form-outline">
-            <input type="text" id="form6Example1" class="form-control" name="phone" />
-            <label class="form-label" for="form6Example1">Phone Number</label>
+        <div class="row mb-1">
+          <!-- address input -->
+          <div class="col">
+            <div class="form-outline">
+              <input type="text" id="form6Example1" class="form-control" name="address" />
+              <label class="form-label" for="form6Example1">Address</label>
+            </div>
+          </div>
+          <!-- zip input -->
+          <div class="col">
+            <div class="form-outline">
+              <input type="text" id="form6Example2" class="form-control" name="zip" />
+              <label class="form-label" for="form6Example2">Zip</label>
+            </div>
           </div>
         </div>
-        <!-- country input -->
-        <div class="col">
-          <div class="form-outline">
-            <input type="text" id="form6Example2" class="form-control" name="country" />
-            <label class="form-label" for="form6Example2">Country</label>
-          </div>
-        </div>
-      </div>
-      <div class="row mb-4">
-        <!-- state input -->
-        <div class="col">
-          <div class="form-outline">
-            <input type="text" id="form6Example1" class="form-control" name="state" />
-            <label class="form-label" for="form6Example1">State/Region</label>
-          </div>
-        </div>
-        <!-- city input -->
-        <div class="col">
-          <div class="form-outline">
-            <input type="text" id="form6Example2" class="form-control" name="city" />
-            <label class="form-label" for="form6Example2">City</label>
-          </div>
-        </div>
-      </div>
-      <div class="row mb-1">
-        <!-- address input -->
-        <div class="col">
-          <div class="form-outline">
-            <input type="text" id="form6Example1" class="form-control" name="address" />
-            <label class="form-label" for="form6Example1">Address</label>
-          </div>
-        </div>
-        <!-- zip input -->
-        <div class="col">
-          <div class="form-outline">
-            <input type="text" id="form6Example2" class="form-control" name="zip" />
-            <label class="form-label" for="form6Example2">Zip</label>
-          </div>
-        </div>
-      </div>
-      <!-- Submit button -->
-      <button type="submit" class="btn btn-primary btn-block mb-3">add</button>
-    </Grid>
-  </Grid>
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block mb-4">add</button>
   </form>
   <!-- MDB -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.js"></script>
