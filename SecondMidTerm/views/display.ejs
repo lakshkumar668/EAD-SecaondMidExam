@@ -86,7 +86,7 @@
                         <%=docs[i].zip%>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-success"><i class="fas fa-pen"></i></button>
+                        <<a href="/edit/<%= docs[i]._id %>" class="btn btn-success"><i class="fas fa-pen"></i></button>
                         <a href="/delete/<%= docs[i]._id %>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                     </td>
                 </tr>
